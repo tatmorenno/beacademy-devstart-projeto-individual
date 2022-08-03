@@ -14,8 +14,13 @@ Route::get('/index', function () {
     return view('admin.dashboard');
 });
 
+Route::get('/index/test', function () {
+    return view('test');
+});
+
 Route::get('/users/', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');
 Route::post('/viacep', [ViaCepController::class, 'index'])->name('viacep.index.post');
